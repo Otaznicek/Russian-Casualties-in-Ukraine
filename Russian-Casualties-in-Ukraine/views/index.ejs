@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Russian Casualties in Ukraine</title>
+</head>
+<body>
+
+<h1 class="main_heading">Russian Casualties in Ukraine</h1>
+<div class="personnel">
+<h2 class="personnel_num" id="personnel_num">0</h2>
+<p>Eliminated personnel</p>
+</div>
+<div class="stats">
+<div>
+
+<h2 class="stats_num" id="tanks_num">0</h2>
+<p>Destroyed tanks</p>
+
+<h2 class="stats_num" id="armouredvehicles_num">0</h2>
+<p>Destroyed armoured vehicles</p>
+
+<h2 class="stats_num" id="UAV_num">0</h2>
+<p>Destroyed UAVS</p>
+</div>
+
+<div>
+<h2 class="stats_num" id="AS_num">0</h2>
+<p>Destroyed artillery systems</p>
+
+
+<h2 class="stats_num" id="MLRS_num">0</h2>
+<p>Destroyed multiple launch rocket systems</p>
+
+<h2 class="stats_num" id="SE_num">0</h2>
+<p>Destroyed special equipment</p>
+</div>
+
+<div>
+<h2 class="stats_num" id="aircraft_num">0</h2>
+<p>Destroyed aircraft</p>
+
+<h2 class="stats_num" id="helicopters_num">0</h2>
+<p>Destroyed helicopters</p>
+
+<h2 class="stats_num" id="cruise_missiles_num">0</h2>
+<p>Shot down cruise missiles</p>
+
+</div>
+</div>
+
+
+<script>
+window.onload = function(){
+ var personnel = <%= personnel %>;
+ var tanks = <%= tanks %>;
+ var armoured_vehicles = <%= armoured_vehicles %>;
+ var AS = <%= AS %>;
+ var MLRS = <%= MLRS %>;
+ var SE = <%= SE %>;
+ var aircraft = <%= aircraft %>;
+ var helicopters = <%= helicopters %>;
+ var cruise_missiles = <%= cruise_missiles %>;
+ var UAV = <%= UAV %>;
+
+ const personnel_num = document.getElementById("personnel_num")
+ const tanks_num = document.getElementById("tanks_num")
+ const armoured_vehicles_num = document.getElementById("armouredvehicles_num")
+ const AS_num = document.getElementById("AS_num")
+ const MLRS_num = document.getElementById("MLRS_num")
+ const SE_num  = document.getElementById("SE_num")
+ const aircraft_num = document.getElementById("aircraft_num")
+ const helicopters_num = document.getElementById("helicopters_num")
+ const cruise_missiles_num = document.getElementById("cruise_missiles_num")
+ const UAV_num = document.getElementById("UAV_num")
+
+ var count_personnel = 0
+ var count_tanks = 0
+ var count_armouredvehicles = 0
+ var count_AS = 0
+ var count_MLRS = 0
+ var count_SE = 0
+ var count_aircraft = 0
+ var count_helicopters = 0
+ var count_cruise_missiles = 0
+ var count_UAV = 0
+
+ const personnel_up = setInterval(function(){
+    if(count_personnel < personnel){
+        count_personnel += 200
+        personnel_num.innerHTML = count_personnel
+    }
+ else{
+    personnel_num.innerHTML = personnel
+    clearInterval(personnel_up)
+ }
+
+ }, 1)
+
+
+ const tanks_up = setInterval(function(){
+    if(count_tanks < tanks){
+        count_tanks += 10
+        tanks_num.innerHTML = count_tanks
+    }
+ else{
+    tanks_num.innerHTML = tanks
+    clearInterval(tanks_up)
+ }
+
+ }, 1)
+
+ const armoured_vehicles_up = setInterval(function(){
+    if(count_armouredvehicles < armoured_vehicles){
+        count_armouredvehicles += 15
+        armoured_vehicles_num.innerHTML = count_armouredvehicles
+    }
+ else{
+    armoured_vehicles_num.innerHTML = armoured_vehicles
+    clearInterval(armoured_vehicles_up)
+ }
+
+ }, 1)
+
+ const AS_up = setInterval(function(){
+    if(count_AS < AS){
+        count_AS += 5
+        AS_num.innerHTML = count_AS
+    }
+ else{
+    AS_num.innerHTML = AS
+    clearInterval(AS_up)
+ }
+
+ },1)
+
+ const MLRS_up = setInterval(function(){
+    if(count_MLRS < MLRS){
+        count_MLRS += 1
+        MLRS_num.innerHTML = count_MLRS
+    }
+ else{
+    MLRS_num.innerHTML = MLRS
+    clearInterval(MLRS_up)
+ }
+
+ },1)
+
+ const SE_up = setInterval(function(){
+    if(count_SE < SE){
+        count_SE += 1
+        SE_num.innerHTML = count_SE
+    }
+ else{
+    SE_num.innerHTML = SE
+    clearInterval(SE_up)
+ }
+
+ },1)
+
+ const aircraft_up = setInterval(function(){
+    if(count_aircraft < aircraft){
+        count_aircraft += 1
+        aircraft_num.innerHTML = count_aircraft
+    }
+ else{
+    aircraft_num.innerHTML = aircraft
+    clearInterval(aircraft_up)
+ }
+
+ },1)
+
+ const helicopters_up = setInterval(function(){
+    if(count_helicopters < helicopters){
+        count_helicopters += 1
+        helicopters_num.innerHTML = count_helicopters
+    }
+ else{
+    helicopters_num.innerHTML = helicopters
+    clearInterval(helicopters_up)
+ }
+
+ },1)
+
+ const cruise_missiles_up = setInterval(function(){
+    if(count_cruise_missiles < cruise_missiles){
+        count_cruise_missiles += 3
+        cruise_missiles_num.innerHTML = count_cruise_missiles
+    }
+ else{
+    cruise_missiles_num.innerHTML = cruise_missiles
+    clearInterval(cruise_missiles_up)
+ }
+
+ },1)
+
+ const UAV_up = setInterval(function(){
+    if(count_UAV < UAV){
+        count_UAV += 3
+        UAV_num.innerHTML = count_UAV
+    }
+ else{
+    UAV_num.innerHTML = UAV
+    clearInterval(UAV_up)
+ }
+
+ },1)
+}
+</script>
+
+<div id="casualties_chart" class="casualties_chart" style="max-width:1000px; height:600px"></div>
+
+<script>
+google.charts.load('current',{packages:['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+function drawChart() {
+var data = google.visualization.arrayToDataTable([
+  ["Day","Casualties"],
+  <%=casualties%>
+  ]);
+
+var options = {
+  title: 'Russian daily casualties',
+  hAxis: {title: 'Days'},
+  vAxis: {title: 'Casualties'},
+
+};
+var chart = new google.visualization.LineChart(document.getElementById('casualties_chart'));
+chart.draw(data, options);
+}
+</script>
+</body>
+</html>

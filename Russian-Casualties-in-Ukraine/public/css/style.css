@@ -1,0 +1,41 @@
+html {
+    background: linear-gradient(112.1deg, rgb(32, 38, 57) 100%, rgb(63, 76, 119) 100%);
+    font-family: Roboto;
+
+}
+.main_heading{
+    color: white;
+    font-size: 50px;
+    text-align: center;
+}
+.stats_num{
+font-size: 45px;
+margin: auto;
+padding: 50px;
+text-align: center;
+}
+.personnel_num{
+font-size:40px;
+}
+.personnel{
+color: white;
+text-align: center;
+
+}
+.stats{
+margin:auto;
+left: 0;
+right: 0;
+width: 100%;
+color: white;
+text-align: center;
+display: flex;
+gap: 50px;
+justify-content: center;
+}
+
+.casualties_chart{
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
