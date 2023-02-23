@@ -13,7 +13,7 @@ const result = [];
 const result_daily = [];
 const url = "https://russian-casualties.in.ua/api/v1/data/csv/daily";
 
-needle
+setInterval(function(){needle
   .get(url)
   .pipe(csvParser())
   .on("data", (data) => {
@@ -21,7 +21,7 @@ needle
   })
   .on("done", (err) => {
     if (err) console.log("An error has occurred");
-  });
+  });},86400000)
 
 
 app.get("/",(req,res)=>{
