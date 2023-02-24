@@ -13,6 +13,7 @@ font-size: 45px;
 margin: auto;
 padding: 50px;
 text-align: center;
+color: white;
 }
 .personnel_num{
 font-size:40px;
@@ -38,4 +39,127 @@ justify-content: center;
     margin: auto;
     margin-top: 100px;
     margin-bottom: 100px;
+    border-radius: 5px;
+    max-width:1000px;
+    height:600px
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1023px) and (min-width: 825px) {
+
+    html {
+        background: linear-gradient(112.1deg, rgb(32, 38, 57) 100%, rgb(63, 76, 119) 100%);
+        font-family: Roboto;
+    
+    }
+    .main_heading{
+        color: white;
+        font-size: 30px;
+        text-align: center;
+    }
+    .stats_num{
+    font-size: 20px;
+    margin: auto;
+    padding: 50px;
+    text-align: center;
+    color: white;
+    }
+    .personnel_num{
+    font-size:25px;
+    }
+    .personnel{
+    color: white;
+    text-align: center;
+    
+    }
+    .stats{
+    margin:auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    }
+    
+    .casualties_chart{
+        margin: auto;
+        margin-top: 100px;
+        margin-bottom: 100px;
+        border-radius: 5px;
+        max-width:600px;
+        height:400px
+    }
+    
+
+}
+
+
+
+
+
+
+@media only screen and (max-width: 825px){
+
+    html {
+        background: linear-gradient(112.1deg, rgb(32, 38, 57) 100%, rgb(63, 76, 119) 100%);
+        font-family: Roboto;
+        width: 100%;
+        margin: auto;
+    }
+    .main_heading{
+        color: white;
+        font-size: 40px;
+        text-align: center;
+    }
+    .stats_num{
+    font-size: 20px;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    }
+    .personnel_num{
+    font-size:30px;
+    }
+    .personnel{
+    color: white;
+    text-align: center;
+    
+    }
+    .stats{
+    margin:auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    }
+    
+    .casualties_chart{
+        margin: auto;
+        margin-top: 100px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        max-width:500px;
+        height:300px
+    }
+    
+
 }
