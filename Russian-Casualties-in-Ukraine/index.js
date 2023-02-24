@@ -7,8 +7,9 @@ app.set('view engine', 'ejs')
 fs = require("fs");
 csvParser = require("csv-parser");
 app.use(express.static(path.join(__dirname, 'public')));
+process = require("process")
 
-const port = process.env.PORT;
+const port = 80
 const result = [];
 const result_daily = [];
 const url = "https://russian-casualties.in.ua/api/v1/data/csv/daily";
@@ -35,6 +36,7 @@ setInterval(function(){
   });},86400000)
 
 
+
 app.get("/",(req,res)=>{
   var personnel = 0
   var tanks = 0
@@ -48,7 +50,7 @@ app.get("/",(req,res)=>{
   var UAV = 0
   var day = 0
   const chart = []
-  
+  var killed_avg = 0
   result.forEach(element => {
     personnel += Number(element["Liquidated"])
     tanks += Number(element["Tanks"])
@@ -63,11 +65,14 @@ app.get("/",(req,res)=>{
     chart.push("[".concat(String(day),",",element["Liquidated"] + "]"))
     day +=1
    });
-  console.log(chart)
-res.render("index",{personnel:personnel,tanks:tanks,armoured_vehicles:armoured_vehicles,AS:AS,MLRS:MLRS,SE:SE,aircraft:aircraft,helicopters:helicopters,cruise_missiles:cruise_missiles,UAV:UAV,casualties:chart})
+  killed_avg = Math.floor(personnel / result.length)
+  console.log(killed_avg)
+res.render("index",{personnel:personnel,tanks:tanks,armoured_vehicles:armoured_vehicles,AS:AS,MLRS:MLRS,SE:SE,aircraft:aircraft,helicopters:helicopters,cruise_missiles:cruise_missiles,UAV:UAV,casualties:chart,killed_avg:killed_avg})
 
 
  }
 )
 
-app.listen(port);
+app.listen(port, ()=>{
+console.log("App si running on " + port)
+});
