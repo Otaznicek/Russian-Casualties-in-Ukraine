@@ -66,7 +66,8 @@ app.get("/",(req,res)=>{
     day +=1
    });
   killed_avg = Math.floor(personnel / result.length)
-  console.log(killed_avg)
+  var ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress
+  console.log(ip)
 res.render("index",{personnel:personnel,tanks:tanks,armoured_vehicles:armoured_vehicles,AS:AS,MLRS:MLRS,SE:SE,aircraft:aircraft,helicopters:helicopters,cruise_missiles:cruise_missiles,UAV:UAV,casualties:chart,killed_avg:killed_avg})
 
 
