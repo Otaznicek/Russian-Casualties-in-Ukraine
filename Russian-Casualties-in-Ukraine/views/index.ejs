@@ -215,7 +215,7 @@ window.onload = function(){
 }
 </script>
 
-<div id="casualties_chart" class="casualties_chart" style="max-width:1000px; height:600px"></div>
+<div id="casualties_chart" class="casualties_chart"></div>
 
 <script>
 google.charts.load('current',{packages:['corechart']});
@@ -230,11 +230,14 @@ var options = {
   title: 'Russian daily casualties',
   hAxis: {title: 'Days'},
   vAxis: {title: 'Casualties'},
-
+  backgroundColor: '#ced5d8',
 };
 var chart = new google.visualization.LineChart(document.getElementById('casualties_chart'));
 chart.draw(data, options);
 }
 </script>
+
+<h2 class="stats_num">On average <%= killed_avg %> russian soldiers are killed daily</h2>
+
 </body>
 </html>
