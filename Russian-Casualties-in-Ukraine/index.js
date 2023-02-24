@@ -9,7 +9,7 @@ csvParser = require("csv-parser");
 app.use(express.static(path.join(__dirname, 'public')));
 process = require("process")
 
-const port = 80
+const port = process.env.PORT
 const result = [];
 const result_daily = [];
 const url = "https://russian-casualties.in.ua/api/v1/data/csv/daily";
